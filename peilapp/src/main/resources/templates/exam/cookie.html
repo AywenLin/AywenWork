@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>用户管理</title>
+<#include "/public/common.html">
+</head>
+<body class="site-menubar-fold site-menubar-keep">
+	<#include "/public/left.html">
+	<div class="page profile profile_index">
+
+		<div class="page-content">
+			<div class="row">
+				<div style="background: #fff; padding: 30px; color: #333;">
+					<h1>cookie和storage</h1>
+					<hr>
+					<p>描述：</p>
+
+					<h2>通过Stroage模拟QQ空间，微博数据本地缓存</h2>
+					<textarea style="width: 600px; height: 300px;" id="wen_content"></textarea>
+					<ol>
+						<li>引入js</li>
+						<li>给textare取id“content” 绑定onkeydown</li>
+						<li>将数据放入缓存中,localstroage.setItem(key,value) 注：比如：mk_user
+							,value 就是那textarea的值</li>
+					</ol>
+					
+							<form action="">
+								<p>账户：<input type="text"/></p>
+								<p>密码：<input type="text"/></p>
+								<p>性别：<input type="text"/></p>
+								<p><label><input type="checkbox" />记住密码</label></p>
+								<p><input type="button"  value="登录"/></p>
+							</form>
+					
+				</div>
+				</div>
+			</div>
+		</div>
+
+	<script>
+		$(function() {
+			$("#wen_content").on("keydown", function() {
+				var textarea = $(this).val();
+				localStroage.setItem("haha", textarea);
+			});
+		});
+	</script>
+</body>
+</html>

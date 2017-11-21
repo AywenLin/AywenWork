@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 后台用户管理的SQL语句 -->
+<mapper namespace="com.cms.mapper.exam.IRegMapper">
+	<insert id="saveUser" parameterType="users" useGeneratedKeys="true"
+		keyProperty="id" keyColumn="id">
+		INSERT INTO wen_user (
+		username,
+		PASSWORD,
+		account,
+		male,
+		hobby,
+		introduce
+		)
+		VALUES
+		(
+		#{username},
+		#{password},
+		#{account},
+		#{male},
+		#{hobby},
+		#{introduce}
+		);
+
+	</insert>
+</mapper>

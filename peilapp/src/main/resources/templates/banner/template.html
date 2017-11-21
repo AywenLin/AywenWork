@@ -1,0 +1,17 @@
+<#list banners as banner>
+<tr>
+	<th scope="row">${banner.id}</th>
+	<td>${banner.img}</td>
+	<td><img src="${banner.url}" width="110px" height="100px"></td>
+	<td>${banner.description}</td>
+	<td>
+	  <#if banner.status==1> 
+	     <input data-field="status"data-bannerid="${banner.id}" type="radio" name="status${banner.id}"class="checked" value="0" />未发布
+	     <input data-field="status"data-bannerid="${banner.id}" type="radio" name="status${banner.id}"class="checked" value="1" checked />发布
+	  <#else> 
+	     <input data-field="status" data-bannerid="${banner.id}" type="radio"name="status${banner.id}" class="checked" value="0" checked />未发布
+	     <input data-field="status" data-bannerid="${banner.id}" type="radio"name="status${banner.id}" class="checked" value="1" />发布
+	  </#if>
+	</td>
+</tr>
+</#list>
